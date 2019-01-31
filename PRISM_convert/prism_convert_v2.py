@@ -146,7 +146,7 @@ def save_data(directory, year, cdata):
             ws = wb.Worksheets.Add()
             # ws.Name = item.replace(' ', '')
             ws.Name = item
-            columns = ['Year', 'Month', 'Precipitation', 'Temp_Avg', 'Temp_Min', 'Temp_Max',  'Dew_Point']
+            columns = ['Year', 'Month', 'Precipitation', 'Temp_Min', 'Temp_Max', 'Temp_Avg',  'Dew_Point']
             for i in range(len(columns)):
                 ws.Cells(1,i+1).Value = columns[i]
 
