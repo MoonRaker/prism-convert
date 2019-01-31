@@ -113,7 +113,7 @@ def save_data(directory, year, cdata):
             ws = wb.Worksheets.Add()
             # ws.Name = item.replace(' ', '')
             ws.Name = item
-            columns = ['Year', 'Month', 'Precipitation', 'Temp_Min', 'Temp_Max', 'Temp_Avg',  'Dew_Point']
+            columns = ['Year', 'Month', 'Precipitation', 'Temp_Avg', 'Temp_Min', 'Temp_Max',  'Dew_Point']
             for i in range(len(columns)):
                 ws.Cells(1,i+1).Value = columns[i]
 
@@ -124,9 +124,9 @@ def save_data(directory, year, cdata):
             ws.Cells(row,1).Value = year
             ws.Cells(row,2).Value = ind + 1
             ws.Cells(row,3).Value = round(cdata[item].loc['p'].values[ind],2)  
-            ws.Cells(row,4).Value = int(cdata[item].loc['tl'].values[ind])
-            ws.Cells(row,5).Value = int(cdata[item].loc['th'].values[ind])
-            ws.Cells(row,6).Value = int(cdata[item].loc['ta'].values[ind])
+            ws.Cells(row,4).Value = int(cdata[item].loc['ta'].values[ind])
+            ws.Cells(row,5).Value = int(cdata[item].loc['tl'].values[ind])
+            ws.Cells(row,6).Value = int(cdata[item].loc['th'].values[ind])
             ws.Cells(row,7).Value = int(cdata[item].loc['td'].values[ind])         
 
     # wb.Save(1)
